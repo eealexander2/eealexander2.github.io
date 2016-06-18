@@ -59,6 +59,11 @@ section {
 aside {
   padding: 50px 0;
 }
+
+.linkedin{
+  height:10px !important;
+  width: 10px !important;
+}
 .no-padding {
   padding: 0;
 }
