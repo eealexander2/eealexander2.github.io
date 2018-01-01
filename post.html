@@ -61,7 +61,6 @@
             <div class="post-heading">
               <h1>Active Record's Duplicate Key Update</h1>
               <span class="meta">
-                <a href="#">Learning</a>
                 December 18, 2017</span>
             </div>
           </div>
@@ -74,15 +73,15 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p>I recently learned about Active Record's "on_duplicate_key_update". The on_duplicate_key_update is part of Active Record's import method. The on_duplicate_key allows the user to specify which fields to update when a duplicate record is found during the import.</p>
+            <p>Recently, I learned about Active Record's on_duplicate_key_update. The on_duplicate_key_update is part of Active Record's import method. The on_duplicate_key allows the user to specify which fields to update when a duplicate record is found during the import. For example, if a new record being imported has a duplicate key has an existing record in Active Record's database, Active Record will only update the specified fields.</p>
 
-            <p>.</p>
+            <p>How does ActiveRecord know how to identify duplicate records? Great question, I was thinking it too. You can let Active Record know how to identify duplicate records by passing in a field column to conflict_target. For example: </p>
 
-            <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+            <code> Equity.import {equities conflict_target: [:symbol], columns: [:description, :opol, :exchanges, :cfi] }</code>
 
-            <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+            <p></p>
 
-            <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+            <p></p>
 
             <h2 class="section-heading">The Final Frontier</h2>
 
