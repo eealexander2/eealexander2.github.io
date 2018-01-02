@@ -73,38 +73,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Recently, I learned about Active Record's on_duplicate_key_update. The on_duplicate_key_update is part of Active Record's import method. The on_duplicate_key allows the user to specify which fields to update when a duplicate record is found during the import. For example, if a new record being imported has a duplicate key has an existing record in Active Record's database, Active Record will only update the specified fields.</p>
+            <p>Recently, I learned about Active Record's on_duplicate_key_update. "on_duplicate_key_update" is part of Active Record's import method. The on_duplicate_key allows the user to specify which fields to update when a duplicate record is found during the import. If there is an existing record in Active Record's database, Active Record will only update the specified fieds in the existing record instead of creating an entirely new record.</p>
 
-            <p>How does ActiveRecord know how to identify duplicate records? Great question, I was thinking it too. You can let Active Record know how to identify duplicate records by passing in a field column to conflict_target. For example: </p>
+            <p>How does ActiveRecord know how to identify duplicate records, you ask? Great question, I was thinking it too. You can let Active Record know how to identify duplicate records by passing in a field column to conflict_target. For example: </p>
 
-            <code> Equity.import {equities conflict_target: [:symbol], columns: [:description, :opol, :exchanges, :cfi] }</code>
+            <code> equities = Equity.all
+            Equity.import {equities conflict_target: [:symbol], columns: [:description, :opol, :exchanges, :cfi]}</code>
 
-            <p></p>
+            <p>In this case, Active Record knows how to identify duplicate records by finding those that share the same "conflict target" attribute. In this case, if Active Record encounters a record that shares the same symbol as the imported record, it will update the existing record instead of creating a new one. How does Active Record know which fields to update? Another great question. To specify which fields to update upon finding a duplicate record, pass Active Record specific columns.  In this example, the columns to update would be description, opol, exchanges, and cfi. </p>
 
-            <p></p>
-
-            <h2 class="section-heading">The Final Frontier</h2>
-
-            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-            <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-
-            <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-            <h2 class="section-heading">Reaching for the Stars</h2>
-
-            <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-            <a href="#">
-              <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
-            </a>
-            <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-            <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-            <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+            <p>And there you have it! A quick overview of Active Record's "on_duplicate_key_update". Cheers! </p>
 
             <p>Placeholder text by
               <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
