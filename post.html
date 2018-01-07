@@ -42,9 +42,6 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
@@ -77,8 +74,8 @@
 
             <p>How does ActiveRecord know how to identify duplicate records, you ask? Great question, I was thinking it too. You can let Active Record know how to identify duplicate records by passing in a field column to conflict_target. For example: </p>
 
-            <code> equities = Equity.all
-            Equity.import {equities conflict_target: [:symbol], columns: [:description, :opol, :exchanges, :cfi]}</code>
+            <code> equities = Equity.all</code>
+            <code>Equity.import {equities conflict_target: [:symbol], columns: [:description, :opol, :exchanges, :cfi]}</code>
 
             <p>In this case, Active Record knows how to identify duplicate records by finding those that share the same "conflict target" attribute. In this case, if Active Record encounters a record that shares the same symbol as the imported record, it will update the existing record instead of creating a new one. How does Active Record know which fields to update? Another great question. To specify which fields to update upon finding a duplicate record, pass Active Record specific columns.  In this example, the columns to update would be description, opol, exchanges, and cfi. </p>
 
