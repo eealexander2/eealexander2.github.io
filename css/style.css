@@ -329,13 +329,13 @@ main, aside {
   width: 50%;
 } 
 
-.center-padded{ 
+.center-padded { 
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  margin-top: 5px; 
-  margin-bottom: 5px; 
+  margin-top: auto; 
+  margin-bottom: auto; 
 }
 
 aside {
